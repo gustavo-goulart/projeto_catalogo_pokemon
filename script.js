@@ -7,7 +7,7 @@ formulario.addEventListener("submit", function (e) {
   // Url da pesquisa
   let urlForm = "https://pokeapi.co/api/v2/pokemon/";
 
-  // Valor do input name
+  // Valor do inpt Name
   let nome = document.getElementById("name");
 
   // Concatena a url com o inputname
@@ -19,7 +19,7 @@ formulario.addEventListener("submit", function (e) {
   // ID Content
   let resposta = document.getElementById("content");
 
-  // ID ImgPokemon
+  // Id ImgPokemon
   let imagem = document.getElementById("imgPokemon");
 
   // Resposta em HTML
@@ -33,7 +33,11 @@ formulario.addEventListener("submit", function (e) {
       resposta.innerHTML = html;
 
       imagem.innerHTML =
-        "<img src='" + data.sprites.front_default + "'><img src='" + data sprites.back_default + "'>";
+        "<img src='" +
+        data.sprites.front_default +
+        "'><img src='" +
+        data.sprites.back_default +
+        "'>";
     })
     .catch(function (err) {
       if (err == "SyntaxError: Unexpected token N in JSON at position 0") {
