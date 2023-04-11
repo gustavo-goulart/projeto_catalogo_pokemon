@@ -28,9 +28,8 @@ formulario.addEventListener("submit", function (e) {
   fetch(urlForm)
     .then((resposta) => resposta.json())
     .then(function (data) {
-      console.log(data);
       html = "Nome: " + maiuscula(data.name) + "<br>";
-      html = html + "Tipo: " + maiuscula(data.types[0].type.name);
+      html = html + "Type: " + maiuscula(data.types[0].type.name);
       resposta.innerHTML = html;
 
       imagem.innerHTML =
@@ -40,10 +39,9 @@ formulario.addEventListener("submit", function (e) {
         data.sprites.back_default +
         "'>";
     })
-
     .catch(function (err) {
       if (err == "SyntaxError: Unexpected token N in JSON at position 0") {
-        html = "Pokémon não encontrado! 😢";
+        html = "Pokémon não encontrado! 😒";
       } else {
         html = err;
       }
