@@ -40,7 +40,7 @@ formulario.addEventListener("submit", function (e) {
         "'>";
     })
     .catch(function (err) {
-      if (err == "SyntaxError: Unexpected token N in JSON at position 0") {
+      if (err.toString().includes("Unexpected token 'N'")) {
         html = "Pokémon não encontrado! 😒";
       } else {
         html = err;
